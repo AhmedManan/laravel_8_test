@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>login page</title>
+<title>registration page</title>
 <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
@@ -9,9 +9,9 @@
 
 <h1>New User?</h1>
 <a href="/" class="btn btn-primary">login</a>
-@if(session('user'))
-    <h3>{{session('user')}} has been added </h3>
-    @endif
+<!-- @if(session('user')) -->
+    <h3>{{session('user')['user']}} has been added </h3>
+    <!-- @endif -->
 <div class='container'>
     <form method="POST" action="/registration">
         @csrf

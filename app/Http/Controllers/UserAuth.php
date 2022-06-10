@@ -32,8 +32,10 @@ class UserAuth extends Controller
 
     public function registration(Request $req)
     {
-        $data = $req->input('input');
+        $data = $req->all();
+        
         $req->session()->flash('user', $data);
+        
         return redirect('registration');
     }
 
