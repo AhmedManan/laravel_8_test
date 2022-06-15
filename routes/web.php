@@ -37,3 +37,8 @@ Route::get('/show','PostController@show');
 Route::get('/delete/{id}','PostController@destroy');
 Route::get('/update/{id}','PostController@edit');
 Route::post('/update/{id}','PostController@update');
+
+// ajax
+Route::get('/ajax','AjaxController@index');
+Route::post('/ajax','AjaxController@store');
+Route::get('/fetch-students','AjaxController@fetchstudent');
