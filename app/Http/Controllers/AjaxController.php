@@ -36,4 +36,20 @@ class AjaxController extends Controller
         
     }
 
+    public function edit($id){
+        $ajax=ajax::find($id);
+        if($ajax){
+            return response()->json([
+            'status'=>200,
+            'ajax'=>$ajax,
+            ]);
+        }
+        else{
+            return response()->json([
+                'status'=>404,
+                'message'=>'Student not found'
+                ]);
+        }
+    }
+
 }

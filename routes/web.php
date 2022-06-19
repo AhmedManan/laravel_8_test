@@ -42,3 +42,4 @@ Route::post('/update/{id}','PostController@update');
 Route::get('/ajax','AjaxController@index');
 Route::post('/ajax','AjaxController@store');
 Route::get('/fetch-students','AjaxController@fetchstudent');
+Route::get('/edit-student/{id}','AjaxController@edit');

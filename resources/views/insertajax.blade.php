@@ -39,14 +39,42 @@
         </tr>
 
       </table>
-
+<!-- Edit -->
+<h1>Edit data</h1>
+    <div class='mb-3'>
+    <label><b>Name</b></label>
+    <input type="text" id="name" name="name" class="name form-control">
+    </div>
+    <div class='mb-3'>
+    <label><b>Email:</b></label>
+    <input type="text" id="email" name="email" class="email form-control">
+    </div>
+    <div class='mb-3'>
+    <label><b>Course:</b></label>
+    <input type="text" id="course" name="course" class="course form-control">
+    </div>
+    <button type="button" name="update_student" value="update_student" class="btn btn-primary update_student">Add Student</button>
+<!-- Edit End -->
 </div>
+
 
 <script>
 
     function onClick(id){
+      // var stud_id=$(this).val();
         console.log(id);
+        // $('#editStudent').modal('show');
+        $.ajax({
+                type: "GET",
+                url: "/edit-students/"+stud_id,
+                // data: data,
+                // datatype: "json",
+                success: function(response){
+                  console.log(response);
+                }
+            });
     }
+    
     $(document).ready(function () {
 
         fetchStudent();
@@ -66,8 +94,8 @@
                             <td>'+item.name+'</td>\
                             <td>'+item.email+'</td>\
                             <td>'+item.course+'</td>\
-                            <td><button type="button" onclick="onClick('+item.id+')" value="'+item.id+'" class="edit_student btn btn-danger btn-sm">Delete</button></td>\
-                            <td><button type="button" value="'+item.id+'" class="delete_student btn btn-primary btn-sm">Update</button></td>\
+                            <td><button type="button" onclick="onClick('+item.id+')" value="'+item.id+'" class="edit_student btn btn-primary btn-sm">Edit</button></td>\
+                            <td><button type="button" value="'+item.id+'" class="delete_student btn btn-danger btn-sm">Delete</button></td>\
                             </tr>'
                         );
                     });
